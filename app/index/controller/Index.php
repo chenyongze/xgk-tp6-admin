@@ -18,7 +18,7 @@ class Index extends Controller
     {
         $ip2region = new \Ip2Region();
         // $ip = '101.105.35.57';
-        $info = $ip2region->btreeSearch(gethostbyname($this->request->host()));
+        $info = $ip2region->btreeSearch($this->request->ip());
         $this->success('', [
             'ip' => $info,
             'cookie' => $this->request->cookie(),
